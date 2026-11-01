@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #030712;
+    color: #f1f5f9;
+  }
+}
+
+/* Glassmorphism and subtle border utility styles - Blue & Black */
+.glass-panel {
+  background: rgba(10, 15, 29, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(59, 130, 246, 0.12);
+}
+
+.glass-panel-subtle {
+  background: rgba(8, 12, 24, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-panel-card {
+  background: linear-gradient(135deg, rgba(13, 20, 38, 0.8) 0%, rgba(7, 11, 22, 0.9) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(59, 130, 246, 0.16);
+}
+
+.glass-panel-card:hover {
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 8px 30px -10px rgba(37, 99, 235, 0.25);
+}
+
+.glow-blue {
+  box-shadow: 0 0 40px -10px rgba(37, 99, 235, 0.35);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}

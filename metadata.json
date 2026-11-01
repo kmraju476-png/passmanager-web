@@ -1,0 +1,6 @@
+{
+  "name": "PassForge",
+  "description": "Your Passwords. Your Control. A professional dark security password manager dashboard with cryptographically secure generator, vault management, and security center.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
