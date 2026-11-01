@@ -56,10 +56,13 @@ class SupabaseAuthService implements IAuthService {
 
   async login(credentials: LoginCredentials): Promise<AuthSession> {
     const { data, error } = await getSupabaseClient().auth.signInWithPassword({
-      email: credentials.email,
+      email: credentials.email.trim(),
       password: credentials.masterPassword,
     });
-    if (error) throw error;
+    if (error) {
+      console.error('[Supabase Auth] signInWithPassword failed:', error);
+      throw error;
+    }
     if (!data.session) throw new Error('Supabase did not return a login session.');
     return toAuthSession(data.session);
   }
